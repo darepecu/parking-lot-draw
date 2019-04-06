@@ -10,6 +10,37 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section class="hero is-light is-fullheight">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="../">
+                  <h1 class="title">Ciudad Central PH.</h1>
+              </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+              <div class="navbar-end">
+                <span class="navbar-item">
+                    <%= link_to 'Home', home_index_path, class: 'button is-info is-outlined' %>
+                </span>
+                <span class="navbar-item">
+                    <%= link_to 'Applicants', applicants_path, class: 'button is-info is-outlined' %>
+                </span>
+                <span class="navbar-item">
+                    <%= link_to 'Parkings', parkings_path, class: 'button is-info is-outlined' %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <%= yield %>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

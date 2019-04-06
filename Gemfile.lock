@@ -51,6 +51,8 @@ GEM
     bootsnap (1.4.2)
       msgpack (~> 1.0)
     builder (3.2.3)
+    bulma-rails (0.7.4)
+      sass (~> 3.5)
     byebug (11.0.1)
     capybara (3.16.1)
       addressable
@@ -201,6 +203,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bulma-rails
   byebug
   capybara (>= 2.15)
   chromedriver-helper

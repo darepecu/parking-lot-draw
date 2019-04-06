@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Applicants</h1>
+<h1 class="title">Applicants</h1>
 
-<table>
+<table class = 'table is-hoverable is-striped'>
   <thead>
     <tr>
       <th>Plate</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= applicant.plate %></td>
         <td><%= applicant.vehicle_type %></td>
-        <td><%= link_to 'Show', applicant %></td>
-        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
-        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', applicant, class: "button is-small is-primary" %></td>
+        <td><%= link_to 'Edit', edit_applicant_path(applicant), class: "button is-small is-info" %></td>
+        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Applicant', new_applicant_path %>
+<%= link_to 'New Applicant', new_applicant_path, class: 'button is-primary is-rounded is-hovered'%>

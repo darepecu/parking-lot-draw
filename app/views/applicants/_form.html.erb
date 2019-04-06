@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :plate %>
+    <%= form.label :plate, class: 'label'%>
     <%= form.text_field :plate %>
   </div>
 
   <div class="field">
-    <%= form.label :vehicle_type %>
+    <%= form.label :vehicle_type, class: 'label'%>
     <%= form.text_field :vehicle_type %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'button is-success'%>
   </div>
 <% end %>

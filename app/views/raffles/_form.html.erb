@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :random_selected %>
+    <%= form.label :parking_id, class: 'label' %>
+    <%= form.text_field :parking_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :random_selected, class: 'label' %>
     <%= form.number_field :random_selected %>
   </div>
 
   <div class="field">
-    <%= form.label :assigned %>
-    <%= form.check_box :assigned %>
-  </div>
-
-  <div class="field">
-    <%= form.label :applicant_id %>
+    <%= form.label :applicant_id, class: 'label' %>
     <%= form.text_field :applicant_id %>
   </div>
 
   <div class="field">
-    <%= form.label :parking_id %>
-    <%= form.text_field :parking_id %>
+    <%= form.label :assigned, class: 'label' %>
+    <%= form.check_box :assigned %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'button is-success' %>
   </div>
 <% end %>

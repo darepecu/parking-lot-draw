@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Plate:</strong>
-  <%= @applicant.plate %>
-</p>
+<div class="columns">
 
-<p>
-  <strong>Vehicle type:</strong>
-  <%= @applicant.vehicle_type %>
-</p>
+  <div class="column">
+  </div>
 
-<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
-<%= link_to 'Back', applicants_path %>
+  <div class="column is-half">
+    <div class="field">
+      <label class= 'label'>Plate:</label>
+      <input class="input is-static" type="text" value="<%= @applicant.plate %>" readonly>
+    </div>
+
+    <div class="field">
+      <label class='label'>Vehicle type:</label>
+      <input class="input is-static" type="text" value="<%= @applicant.vehicle_type %>" readonly>
+    </div>
+
+    <%= link_to 'Edit', edit_applicant_path(@applicant), class: 'button is-outlined' %>
+    <%= link_to 'Back', applicants_path, class: 'button is-outlined' %>
+  </div>
+  
+  <div class="column">
+  </div>
+</div>

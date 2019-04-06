@@ -1,6 +1,6 @@
-<h1>Editing Parking</h1>
+<h1 class="title">Editing Parking</h1>
 
 <%= render 'form', parking: @parking %>
 
-<%= link_to 'Show', @parking %> |
-<%= link_to 'Back', parkings_path %>
+<%= link_to 'Show', @parking, class: 'button is-outlined' %>
+<%= link_to 'Back', parkings_path, class: 'button is-outlined' %>

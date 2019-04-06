@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @parking.name %>
-</p>
+<div class="columns">
+  <div class="column">
+  </div>
 
-<p>
-  <strong>Parking type:</strong>
-  <%= @parking.parking_type %>
-</p>
+  <div class="column">
+    <div class="field">
+      <label class= 'label'>Name:</label>
+      <input class="input is-static" type="text" value="<%= @parking.name %>" readonly>
+    </div>
 
-<%= link_to 'Edit', edit_parking_path(@parking) %> |
-<%= link_to 'Back', parkings_path %>
+    <div class="field">
+      <label class= 'label'>Parking type:</label>
+      <input class="input is-static" type="text" value="<%= @parking.parking_type %>" readonly>
+    </div>
+
+    <%= link_to 'Edit', edit_parking_path(@parking), class: 'button is-outlined' %> 
+    <%= link_to 'Back', parkings_path, class: 'button is-outlined' %>
+  </div>
+
+  <div class="column">
+  </div>
+
+</div>  
+
+
+

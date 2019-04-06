@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Raffles</h1>
+<h1 class="title">Raffles</h1>
 
-<table>
+<table class = 'table is-hoverable'>
   <thead>
     <tr>
       <th>Random selected</th>
       <th>Assigned</th>
       <th>Applicant</th>
       <th>Parking</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -18,11 +18,9 @@
       <tr>
         <td><%= raffle.random_selected %></td>
         <td><%= raffle.assigned %></td>
-        <td><%= raffle.applicant %></td>
-        <td><%= raffle.parking %></td>
-        <td><%= link_to 'Show', raffle %></td>
-        <td><%= link_to 'Edit', edit_raffle_path(raffle) %></td>
-        <td><%= link_to 'Destroy', raffle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= raffle.applicant.plate %></td>
+        <td><%= raffle.parking.name %></td>
+        <td><%= link_to 'Show', raffle, class: "button is-small is-primary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Raffle', new_raffle_path %>
+<%= link_to 'New Raffle', new_raffle_path, class: 'button is-primary is-rounded is-hovered'%>

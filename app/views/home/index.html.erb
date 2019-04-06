@@ -1,0 +1,18 @@
+<div class="column is-6 is-offset-3">
+  <h1 class="title">
+    Sorteo Parqueaderos
+  </h1>
+  <h2 class="subtitle">
+    Serán sorteados:
+  </h2>
+  <div class="content">
+    <ul>
+      <li><strong><%= Parking.where(parking_type: 'AUTO').count %></strong> Parqueaderos de Autos para <strong><%= Applicant.where(vehicle_type: 'AUTO').count %></strong> candidatos</li>
+      <li><strong><%= Parking.where(parking_type: 'MOTO').count %></strong> Parqueaderos de Motos para <strong><%= Applicant.where(vehicle_type: 'MOTO').count %></strong> candidatos</li>
+      <li><strong><%= Parking.where(parking_type: 'DISCA').count %></strong> Parqueaderos para Discapacitados para <strong><%= Applicant.where(vehicle_type: 'DISCA').count%> </strong> candidatos</li>
+    </ul>
+  </div>
+  <div class="box">
+    <%= link_to 'Iniciar Sorteo', new_raffle_path, class: 'button is-primary'%>
+  </div>
+</div>

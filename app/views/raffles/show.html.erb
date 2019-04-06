@@ -1,24 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Random selected:</strong>
-  <%= @raffle.random_selected %>
-</p>
+<div class="columns">
 
-<p>
-  <strong>Assigned:</strong>
-  <%= @raffle.assigned %>
-</p>
+  <div class="column">
+  </div>
 
-<p>
-  <strong>Applicant:</strong>
-  <%= @raffle.applicant %>
-</p>
+  <div class="column">
+    <div class="field">
+      <label class="label">Random selected:</label>
+      <input class="input is-static" type="text" value="<%= @raffle.random_selected %>" readonly>
+    </div>
 
-<p>
-  <strong>Parking:</strong>
-  <%= @raffle.parking %>
-</p>
+    <div class="field">
+      <label class="label">Assigned:</label>
+      <input class="input is-static" type="text" value="<%= @raffle.assigned %>" readonly>
+    </div>
 
-<%= link_to 'Edit', edit_raffle_path(@raffle) %> |
-<%= link_to 'Back', raffles_path %>
+    <div class="field">
+      <label class="label">Applicant:</label>
+      <input class="input is-static" type="text" value="<%= @raffle.applicant.plate %>" readonly>
+    </div>
+
+    <div class="field">
+    <label class="label">Parking:</label>
+    <input class="input is-static" type="text" value="<%= @raffle.parking.name %>" readonly>
+    </div>
+
+    <%= link_to 'Edit', edit_raffle_path(@raffle), class: 'button is-outlined' %>
+    <%= link_to 'Back', raffles_path, class: 'button is-outlined' %>
+  </div>
+
+  <div class="column">
+  </div>
+ </div>
