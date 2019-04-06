@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  random_selected: 1
+  assigned: false
+  applicant: one
+  parking: one
+
+two:
+  random_selected: 1
+  assigned: false
+  applicant: two
+  parking: two

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Random selected:</strong>
+  <%= @raffle.random_selected %>
+</p>
+
+<p>
+  <strong>Assigned:</strong>
+  <%= @raffle.assigned %>
+</p>
+
+<p>
+  <strong>Applicant:</strong>
+  <%= @raffle.applicant %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @raffle.parking %>
+</p>
+
+<%= link_to 'Edit', edit_raffle_path(@raffle) %> |
+<%= link_to 'Back', raffles_path %>

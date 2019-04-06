@@ -1,0 +1,27 @@
+<%= form_with(model: applicant, local: true) do |form| %>
+  <% if applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+      <% applicant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :plate %>
+    <%= form.text_field :plate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicle_type %>
+    <%= form.text_field :vehicle_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

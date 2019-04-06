@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plate:</strong>
+  <%= @applicant.plate %>
+</p>
+
+<p>
+  <strong>Vehicle type:</strong>
+  <%= @applicant.vehicle_type %>
+</p>
+
+<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
+<%= link_to 'Back', applicants_path %>
