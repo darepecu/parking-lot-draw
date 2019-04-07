@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Parkings</h1>
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Parqueaderos</h1>
+    <h2 class="subtitle">Listado de todos los parqueaderos</h1>
+  </div>
+  
+</section>
 
 <table class = 'table is-hoverable'>
   <thead>
@@ -18,9 +24,9 @@
         <td><%= parking.name %></td>
         <td><%= parking.parking_type %></td>
         <td><%= parking.assigned %></td>
-        <td><%= link_to 'Show', parking, class: "button is-small is-primary" %></td>
-        <td><%= link_to 'Edit', edit_parking_path(parking), class: "button is-small is-info"  %></td>
-        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning" %></td>
+        <td><%= link_to 'Show', parking, class: "button is-small is-primary is-rounded is-outlined" %></td>
+        <td><%= link_to 'Edit', edit_parking_path(parking), class: "button is-small is-info is-rounded is-outlined"  %></td>
+        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning is-rounded is-outlined" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Parking', new_parking_path, class: 'button is-primary is-rounded is-hovered'%>
+<%= link_to 'New Parking', new_parking_path, class: 'button is-primary is-hovered is-rounded is-outlined'%>

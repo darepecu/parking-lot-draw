@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Raffles</h1>
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Sorteos Realizados</h1>
+    <h2 class="subtitle">Resultado de sorteos realizados</h1>
+  </div>
+</section>
 
 <table class = 'table is-hoverable'>
   <thead>
@@ -18,7 +23,7 @@
         <td><%= raffle.assigned %></td>
         <td><%= raffle.applicant.plate %></td>
         <td><%= raffle.parking.name %></td>
-        <td><%= link_to 'Show', raffle, class: "button is-small is-primary" %></td>
+        <td><%= link_to 'Show', raffle, class: "button is-small is-primary is-rounded is-outlined" %></td>
       </tr>
     <% end %>
   </tbody>

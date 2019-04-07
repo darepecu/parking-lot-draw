@@ -1,50 +1,66 @@
-<div class="column is-6 is-offset-3">
-  <h1 class="title">
-    Sorteo Parqueaderos
-  </h1>
-  <h2 class="subtitle">
-    Estan siendo sorteados:
-  </h2>
-  <div class="content">
-    <ul>
-      <li>
-        <strong> <%= @parking_total_auto %></strong> Parqueaderos de Autos para <strong><%= @applicant_total_auto %></strong> candidatos
-      </li>
-      <li>
-        <strong><%= @parking_total_moto %></strong> Parqueaderos de Motos para <strong><%= @applicant_total_moto %></strong> candidatos
-      </li>
-      <li>
-        <strong><%= @parking_total_disca %></strong> Parqueaderos para Discapacitados para <strong><%= @applicant_total_disca %> </strong> candidatos
-        </li>
-    </ul>
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Sorteo</h1>
   </div>
-  <div class="box">
-    <% if @end_raffle %>
-      <%= link_to 'Sorteo Finalizado', home_index_path, class: 'button is-outlined'%>
-    <% elsif @raffle_count > 0%>
-      <%= link_to 'Continuar Sorteo', new_raffle_path, class: 'button is-primary'%>
-    <% else %>
-      <%= link_to 'Iniciar Sorteo', new_raffle_path, class: 'button is-primary'%> 
-    <% end %>
-  </div>
+</section>
 
-  <h2 class="subtitle">
-    Estado del sorteo:
-  </h2>
-  <div class="content">
-    <ul>
-      <li><strong><%= @parking_total_auto_waiting %></strong> Disponibles de Autos para <strong><%= @applicant_total_auto_waiting %></strong> candidatos</li>
-      <li><strong><%= @parking_total_moto_waiting %></strong> Disponibles de Motos para <strong><%= @applicant_total_moto_waiting %></strong> candidatos</li>
-      <li><strong><%= @parking_total_disca_waiting %></strong> Disponibles para Discapacitados para <strong><%= @applicant_total_disca_waiting%> </strong> candidatos</li>
-    </ul>
-  </div>
+<h2 class="subtitle">
+  Estado del sorteo:
+</h2>
 
-  <div class="content">
-    <ul>
-      <li><strong><%= @parking_total_auto_assigned %></strong> Asignados de Autos</li>
-      <li><strong><%= @parking_total_moto_assigned %></strong> Asignados de Motos</li>
-      <li><strong><%= @parking_total_disca_assigned %></strong> Asignados para Discapacitados</li>
-    </ul>
-  </div>
+<div class="box">
+  <h3>
+    Cantidad de parqueaderos asignados:
+  </h3>
+  <ul>
+    <li><strong><%= @parking_total_auto_assigned %></strong> Autos</li>
+    <li><strong><%= @parking_total_moto_assigned %></strong> Motos</li>
+    <li><strong><%= @parking_total_disca_assigned %></strong> Para Discapacitados</li>
+  </ul>
+</div>
 
+<div class="box">
+  <h3>
+  Cantidad de parqueaderos Disponibles:
+  </h3>
+  <h4>
+    <%= @parking_total_auto_waiting %> de <%= @parking_total_auto %> Autos
+    <progress class="progress is-primary" value="<%= (@parking_total_auto_waiting.to_f/@parking_total_auto.to_f)*100 %>" max="100"></progress>
+  </h4>
+  <h4>
+    <%= @parking_total_moto_waiting %> de <%= @parking_total_moto %> Motos
+    <progress class="progress is-primary" value="<%= (@parking_total_moto_waiting.to_f/@parking_total_moto.to_f)*100 %>" max="100"></progress>
+  </h4>
+  <h4>
+    <%= @parking_total_disca_waiting %> de <%= @parking_total_disca %> Para Discapacitados
+    <progress class="progress is-primary" value="<%= (@parking_total_disca_waiting.to_f/@parking_total_disca.to_f)*100 %>" max="100"></progress>
+  </h4>
+</div>
+
+<div class="box">
+  <h3>
+  Cantidad de Usuarios a espera de asignación:
+  </h3>
+  <h4>
+    <%= @applicant_total_auto_waiting %> de <%= @applicant_total_auto %> Auto
+    <progress class="progress is-info" value="<%= (@applicant_total_auto_waiting.to_f/@applicant_total_auto.to_f)*100 %>" max="100"></progress>
+  </h4>
+  <h4>
+    <%= @applicant_total_moto_waiting %> de <%= @applicant_total_moto %> Moto
+    <progress class="progress is-info" value="<%= (@applicant_total_moto_waiting.to_f/@applicant_total_moto.to_f)*100 %>" max="100"></progress>
+  </h4>
+  <h4>
+    <%= @applicant_total_disca_waiting %> de <%= @applicant_total_disca %> Para Discapacitados
+    <progress class="progress is-info" value="<%= (@applicant_total_disca_waiting.to_f/@applicant_total_disca.to_f)*100 %>" max="100"></progress>
+  </h4>
+</div>
+
+<div class="content">
+  <% if @end_raffle %>
+    <%= link_to 'Sorteo Finalizado', home_index_path, class: 'button is-rounded is-outlined'%>
+  <% elsif @raffle_count > 0%>
+    <%= link_to 'Continuar Sorteo', new_raffle_path, class: 'button is-primary is-rounded is-outlined'%>
+  <% else %>
+    <%= link_to 'Iniciar Sorteo', new_raffle_path, class: 'button is-primary is-rounded is-outlined'%> 
+  <% end %>
 </div>
