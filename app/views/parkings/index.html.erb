@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Parking type</th>
+      <th>Assigned</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= parking.name %></td>
         <td><%= parking.parking_type %></td>
+        <td><%= parking.assigned %></td>
         <td><%= link_to 'Show', parking, class: "button is-small is-primary" %></td>
         <td><%= link_to 'Edit', edit_parking_path(parking), class: "button is-small is-info"  %></td>
         <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning" %></td>

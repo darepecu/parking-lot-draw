@@ -3,16 +3,48 @@
     Sorteo Parqueaderos
   </h1>
   <h2 class="subtitle">
-    Serán sorteados:
+    Estan siendo sorteados:
   </h2>
   <div class="content">
     <ul>
-      <li><strong><%= Parking.where(parking_type: 'AUTO').count %></strong> Parqueaderos de Autos para <strong><%= Applicant.where(vehicle_type: 'AUTO').count %></strong> candidatos</li>
-      <li><strong><%= Parking.where(parking_type: 'MOTO').count %></strong> Parqueaderos de Motos para <strong><%= Applicant.where(vehicle_type: 'MOTO').count %></strong> candidatos</li>
-      <li><strong><%= Parking.where(parking_type: 'DISCA').count %></strong> Parqueaderos para Discapacitados para <strong><%= Applicant.where(vehicle_type: 'DISCA').count%> </strong> candidatos</li>
+      <li>
+        <strong> <%= @parking_total_auto %></strong> Parqueaderos de Autos para <strong><%= @applicant_total_auto %></strong> candidatos
+      </li>
+      <li>
+        <strong><%= @parking_total_moto %></strong> Parqueaderos de Motos para <strong><%= @applicant_total_moto %></strong> candidatos
+      </li>
+      <li>
+        <strong><%= @parking_total_disca %></strong> Parqueaderos para Discapacitados para <strong><%= @applicant_total_disca %> </strong> candidatos
+        </li>
     </ul>
   </div>
   <div class="box">
-    <%= link_to 'Iniciar Sorteo', new_raffle_path, class: 'button is-primary'%>
+    <% if @end_raffle %>
+      <%= link_to 'Sorteo Finalizado', home_index_path, class: 'button is-outlined'%>
+    <% elsif @raffle_count > 0%>
+      <%= link_to 'Continuar Sorteo', new_raffle_path, class: 'button is-primary'%>
+    <% else %>
+      <%= link_to 'Iniciar Sorteo', new_raffle_path, class: 'button is-primary'%> 
+    <% end %>
   </div>
+
+  <h2 class="subtitle">
+    Estado del sorteo:
+  </h2>
+  <div class="content">
+    <ul>
+      <li><strong><%= @parking_total_auto_waiting %></strong> Disponibles de Autos para <strong><%= @applicant_total_auto_waiting %></strong> candidatos</li>
+      <li><strong><%= @parking_total_moto_waiting %></strong> Disponibles de Motos para <strong><%= @applicant_total_moto_waiting %></strong> candidatos</li>
+      <li><strong><%= @parking_total_disca_waiting %></strong> Disponibles para Discapacitados para <strong><%= @applicant_total_disca_waiting%> </strong> candidatos</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <ul>
+      <li><strong><%= @parking_total_auto_assigned %></strong> Asignados de Autos</li>
+      <li><strong><%= @parking_total_moto_assigned %></strong> Asignados de Motos</li>
+      <li><strong><%= @parking_total_disca_assigned %></strong> Asignados para Discapacitados</li>
+    </ul>
+  </div>
+
 </div>

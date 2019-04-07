@@ -7,6 +7,7 @@
     <tr>
       <th>Plate</th>
       <th>Vehicle type</th>
+      <th>Assigned</th> 
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= applicant.plate %></td>
         <td><%= applicant.vehicle_type %></td>
+        <td><%= applicant.assigned %></td>
         <td><%= link_to 'Show', applicant, class: "button is-small is-primary" %></td>
         <td><%= link_to 'Edit', edit_applicant_path(applicant), class: "button is-small is-info" %></td>
         <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning" %></td>

@@ -6,10 +6,6 @@
   </div>
 
   <div class="column">
-    <div class="field">
-      <label class="label">Random selected:</label>
-      <input class="input is-static" type="text" value="<%= @raffle.random_selected %>" readonly>
-    </div>
 
     <div class="field">
       <label class="label">Assigned:</label>
@@ -27,7 +23,7 @@
     </div>
 
     <%= link_to 'Edit', edit_raffle_path(@raffle), class: 'button is-outlined' %>
-    <%= link_to 'Back', raffles_path, class: 'button is-outlined' %>
+    <%= link_to 'Continue', home_index_path, class: 'button is-primary' %>
   </div>
 
   <div class="column">

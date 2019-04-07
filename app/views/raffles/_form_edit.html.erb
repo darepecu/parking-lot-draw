@@ -13,23 +13,14 @@
 
   <div class="field">
     <%= form.label :parking_id, class: 'label' %>
-    <% if @parking_raffle.nil? %>
-      <%= form.text_field :parking_id %>
-    <% else %>
-      <%= form.text_field :parking_id, value: @parking_raffle.id %>
-      <p><%= @parking_raffle.name %></p>
-    <% end %>
+    <%= form.text_field :parking_id%>
+    <p><%= @parking_raffle.name %></p>
   </div>
 
   <div class="field">
     <%= form.label :applicant_id, class: 'label' %>
-    <% if @applicant_raffle.nil? %>
-      <%= form.text_field :applicant_id%>
-    <% else %>
-      <%= form.text_field :applicant_id, value: @applicant_raffle.id  %>
-      <p><%= @applicant_raffle.plate %></p>
-    <% end %>
-    
+    <%= form.text_field :applicant_id%>
+    <p><%= @applicant_raffle.plate %></p>
   </div>
 
   <div class="field">

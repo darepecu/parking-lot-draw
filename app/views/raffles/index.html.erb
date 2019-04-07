@@ -5,7 +5,6 @@
 <table class = 'table is-hoverable'>
   <thead>
     <tr>
-      <th>Random selected</th>
       <th>Assigned</th>
       <th>Applicant</th>
       <th>Parking</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @raffles.each do |raffle| %>
       <tr>
-        <td><%= raffle.random_selected %></td>
         <td><%= raffle.assigned %></td>
         <td><%= raffle.applicant.plate %></td>
         <td><%= raffle.parking.name %></td>
@@ -27,5 +25,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Raffle', new_raffle_path, class: 'button is-primary is-rounded is-hovered'%>
