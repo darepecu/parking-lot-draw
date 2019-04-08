@@ -8,30 +8,31 @@
   
 </section>
 
-<table class = 'table is-hoverable is-striped'>
-  <thead>
-    <tr>
-      <th>Plate</th>
-      <th>Vehicle type</th>
-      <th>Assigned</th> 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @applicants.each do |applicant| %>
+<div class="column is-one-quarter">
+  <table class = 'table is-hoverable is-striped'>
+    <thead>
       <tr>
-        <td><%= applicant.plate %></td>
-        <td><%= applicant.vehicle_type %></td>
-        <td><%= applicant.assigned %></td>
-        <td><%= link_to 'Show', applicant, class: "button is-small is-primary is-rounded is-outlined" %></td>
-        <td><%= link_to 'Edit', edit_applicant_path(applicant), class: "button is-small is-info is-rounded is-outlined" %></td>
-        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning is-rounded is-outlined" %></td>
+        <th>Placa</th>
+        <th>Tipo de Vehículo</th>
+        <th>Estado Asignación</th> 
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @applicants.each do |applicant| %>
+        <tr>
+          <td><%= applicant.plate %></td>
+          <td><%= applicant.vehicle_type %></td>
+          <td><%= applicant.assigned %></td>
+          <td><%= link_to 'Editar', edit_applicant_path(applicant), class: "button is-small is-info is-rounded is-outlined" %></td>
+          <td><%= link_to 'Eliminar', applicant, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-warning is-rounded is-outlined" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Applicant', new_applicant_path, class: 'button is-primary is-rounded is-hovered is-outlined'%>
+  <br>
+
+  <%= link_to 'Nuevo Usuario', new_applicant_path, class: 'button is-primary is-rounded is-hovered is-outlined'%>
+</div>

@@ -15,8 +15,18 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item brand-text" href="../">
-          Ciudad Central PH.
-        </a>
+                  <div class = 'columns'>
+                    <div class = 'column'>
+                      <figure class="image">
+                        <%= image_tag ("/assets/Logo_Ciudad_Central.png")%>
+                      </figure>
+                    </div>
+                    <div class = 'column'>
+                    </div>
+                    <div class = 'column'>
+                    </div>
+                  </div>
+                </a>
                 <div class="navbar-burger burger" data-target="navMenu">
                     <span></span>
                     <span></span>
@@ -60,13 +70,10 @@
             </p>
             <ul class="menu-list">
               <li>
-                <%= link_to 'Asignados', home_index_path %>
+                <%= link_to 'Asignados', assigned_parkings_path %>
               </li>
               <li>
-                <%= link_to 'No asignados', home_index_path %>
-              </li>
-              <li>
-                <%= link_to 'Pendientes por asignar', home_index_path %>
+                <%= link_to 'No asignados', no_assigned_parkings_path %>
               </li>
             </ul>
             <p class="menu-label">
@@ -74,13 +81,13 @@
             </p>
             <ul class="menu-list">
               <li>
-                <%= link_to 'Asignados', home_index_path %>
+                <%= link_to 'Asignados', assigned_applicants_path %>
               </li>
               <li>
-                <%= link_to 'No asignados', home_index_path %>
+                <%= link_to 'No asignados', no_assigned_applicants_path %>
               </li>
               <li>
-                <%= link_to 'Pendientes por asignar', home_index_path %>
+                <%= link_to 'Pendientes por asignar', pending_assigned_applicants_path %>
               </li>
             </ul>
           </aside>

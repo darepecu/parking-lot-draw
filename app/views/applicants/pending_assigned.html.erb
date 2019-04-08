@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Usuarios</h1>
+    <h2 class="subtitle">Usuarios asignados con Parqueadero <%= Applicant.where(assigned: nil).count%> </h1>
+  </div>
+  
+</section>
+
+<div class="column is-one-quarter">
+  <table class = 'table is-hoverable is-striped'>
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Tipo de Vehículo</th>
+        <th>Estado Asignación</th> 
+      </tr>
+    </thead>
+
+    <tbody>
+      <% Applicant.all.each do |applicant| %>
+        <%if applicant.assigned.eql?(nil) %>
+          <tr>
+            <td><%= applicant.plate %></td>
+            <td><%= applicant.vehicle_type %></td>
+            <td><%= applicant.assigned %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -49,6 +49,12 @@ class RafflesController < ApplicationController
       applicant_raffle = Applicant.find_by(id: raffle_params['applicant_id'])
       applicant_raffle.assigned = true 
       applicant_raffle.save 
+    
+    else
+      
+      applicant_raffle = Applicant.find_by(id: raffle_params['applicant_id'])
+      applicant_raffle.assigned = false 
+      applicant_raffle.save 
 
     end
 

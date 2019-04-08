@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :parking_id, class: 'label' %>
+    
     <% if @parking_raffle.nil? %>
+      <%= form.label :parking_id, class: 'label' %>
       <%= form.text_field :parking_id %>
     <% else %>
-      <%= form.text_field :parking_id, value: @parking_raffle.id %>
-      <p><%= @parking_raffle.name %></p>
+      <%= form.hidden_field :parking_id, value: @parking_raffle.id, :readonly => true %>
+      <h4 class='label'>Parqueadero:</h4>
+      <div class='input is-primary is-rounded'><%= @parking_raffle.name %></div>
     <% end %>
   </div>
 
   <div class="field">
-    <%= form.label :applicant_id, class: 'label' %>
+    
     <% if @applicant_raffle.nil? %>
+      <%= form.label :applicant_id, class: 'label' %>
       <%= form.text_field :applicant_id%>
     <% else %>
-      <%= form.text_field :applicant_id, value: @applicant_raffle.id  %>
-      <p><%= @applicant_raffle.plate %></p>
+      <%= form.hidden_field :applicant_id, value: @applicant_raffle.id, :readonly => true  %>
+      <h4 class='label'>Vehículo: </h4>
+      <div class='input is-primary is-rounded'> <%= @applicant_raffle.plate %></div>
     <% end %>
     
   </div>

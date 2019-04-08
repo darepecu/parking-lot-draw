@@ -21,6 +21,11 @@
     <%= form.text_field :vehicle_type %>
   </div>
 
+  <div class="field">
+    <%= form.label :assigned, class: 'label'%>
+    <%= form.check_box :assigned %>
+  </div>
+
   <div class="actions">
     <%= form.submit class: 'button is-success is-outlined'%>
   </div>

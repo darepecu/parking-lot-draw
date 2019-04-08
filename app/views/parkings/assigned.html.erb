@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Parqueaderos</h1>
+    <h2 class="subtitle">Listado de todos los parqueaderos Asignados <%= Parking.where(assigned: true).count%></h1>
+  </div>
+</section>
+
+<div class="column is-one-quarter">
+
+  <table class = 'table is-hoverable'>
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Tipo Parqueadero</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% Parking.all.each do |parking| %>
+        <%if parking.assigned %>
+          <tr>
+            <td><%= parking.name %></td>
+            <td><%= parking.parking_type %></td>
+            <td><%= parking.assigned %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
