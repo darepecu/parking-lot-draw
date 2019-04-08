@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ParkingLotDraw</title>
+    <title>Ciudad Central</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./bulma-dashboard.min.css">
   </head>
 
   <body>
-    <!-- START NAV -->
-    <nav class="navbar-brand is-white" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item brand-text" href="../">
-                  <div class = 'columns'>
-                    <div class = 'column'>
-                      <figure class="image">
-                        <%= image_tag ("/assets/Logo_Ciudad_Central.png")%>
-                      </figure>
-                    </div>
-                    <div class = 'column'>
-                    </div>
-                    <div class = 'column'>
-                    </div>
-                  </div>
-                </a>
-                <div class="navbar-burger burger" data-target="navMenu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div id="navMenu" class="navbar-menu">
-                <div class="navbar-start">
-               
-                </div>
 
-            </div>
+    <div class="dashboard">
+
+      <div class="dashboard-panel has-background-grey-lighter is-small">
+        <div class="has-text-centered">
+           <%= image_tag ("/assets/Logo_Ciudad_Central.png")%>
         </div>
-    </nav>
-    <!-- END NAV -->
-
-    <div class='container is-widescreen '>
-      <div class='columns'>
-
-        <div class='column is-2 has-background-light'>
-          <aside class="menu">
+        <aside class="menu">
             <p class="menu-label">
+              <i class="fa fa-home"></i>
               General
             </p>
             <ul class="menu-list">
@@ -66,6 +40,7 @@
               </li>
             </ul>
             <p class="menu-label">
+              <i class="fa fa-random"></i>
               Sorteo
             </p>
             <ul class="menu-list">
@@ -74,6 +49,7 @@
               </li>
             </ul>
             <p class="menu-label">
+              <i class="fa fa-car"></i>
               Parqueaderos
             </p>
             <ul class="menu-list">
@@ -85,6 +61,7 @@
               </li>
             </ul>
             <p class="menu-label">
+              <i class="fa fa-users"></i>
               Usuarios
             </p>
             <ul class="menu-list">
@@ -99,14 +76,75 @@
               </li>
             </ul>
           </aside>
-        </div> 
+      </div>
 
-        <div class="column is-9">
-          <%= yield %>
+      <div class="dashboard-main is-scrollable">
+        <nav class="navbar navbar-brand is-dark">
+        </nav>
+
+        <section class="section">
+          <p id="notice"><%= notice %></p>
+          <div class="column is-three-fifths  is-offset-one-fifth ">
+            <%= yield %>
+          </div>
+        </section>
+      </div>
+
+      <div class="dashboard-panel is-medium has-background-light is-scrollable">
+        
+        <h2 class="subtitle">
+          Estado del sorteo:
+        </h2>
+
+        <div class="box">
+          <h3>
+            Cantidad de parqueaderos asignados:
+          </h3>
+          <ul>
+            <li><strong><%= @parking_total_auto_assigned %></strong> Autos</li>
+            <li><strong><%= @parking_total_moto_assigned %></strong> Motos</li>
+            <li><strong><%= @parking_total_disca_assigned %></strong> Para Discapacitados</li>
+          </ul>
         </div>
 
-      </div> 
-    </div>
+        <div class="box">
+          <h3>
+          Cantidad de parqueaderos Disponibles:
+          </h3>
+          <h4>
+            <%= @parking_total_auto_waiting %> de <%= @parking_total_auto %> Autos
+            <progress class="progress is-primary" value="<%= (@parking_total_auto_waiting.to_f/@parking_total_auto.to_f)*100 %>" max="100"></progress>
+          </h4>
+          <h4>
+            <%= @parking_total_moto_waiting %> de <%= @parking_total_moto %> Motos
+            <progress class="progress is-primary" value="<%= (@parking_total_moto_waiting.to_f/@parking_total_moto.to_f)*100 %>" max="100"></progress>
+          </h4>
+          <h4>
+            <%= @parking_total_disca_waiting %> de <%= @parking_total_disca %> Para Discapacitados
+            <progress class="progress is-primary" value="<%= (@parking_total_disca_waiting.to_f/@parking_total_disca.to_f)*100 %>" max="100"></progress>
+          </h4>
+        </div>
 
+        <div class="box">
+          <h3>
+          Cantidad de Usuarios a espera de asignación:
+          </h3>
+          <h4>
+            <%= @applicant_total_auto_waiting %> de <%= @applicant_total_auto %> Auto
+            <progress class="progress is-info" value="<%= (@applicant_total_auto_waiting.to_f/@applicant_total_auto.to_f)*100 %>" max="100"></progress>
+          </h4>
+          <h4>
+            <%= @applicant_total_moto_waiting %> de <%= @applicant_total_moto %> Moto
+            <progress class="progress is-info" value="<%= (@applicant_total_moto_waiting.to_f/@applicant_total_moto.to_f)*100 %>" max="100"></progress>
+          </h4>
+          <h4>
+            <%= @applicant_total_disca_waiting %> de <%= @applicant_total_disca %> Para Discapacitados
+            <progress class="progress is-info" value="<%= (@applicant_total_disca_waiting.to_f/@applicant_total_disca.to_f)*100 %>" max="100"></progress>
+          </h4>
+        </div>
+
+      </div>
+
+    </div> 
   </body>
 </html>

@@ -1,5 +1,8 @@
 {
   "name": "parking-lot-draw",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "bulma-dashboard": "^0.1.40"
+  }
 }
