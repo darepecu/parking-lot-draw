@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     @applicant_total_disca_waiting = Applicant.where(vehicle_type: 'DISCA', assigned: nil).count
 
     @raffle_count = Raffle.count
-    @end_raffle =  Raffle.where(assigned: true).count.eql?(Parking.count)
+    @end_raffle = Raffle.where(assigned: true).count.eql?(Parking.count)
 
   end
 

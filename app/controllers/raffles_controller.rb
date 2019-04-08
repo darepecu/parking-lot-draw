@@ -16,13 +16,13 @@ class RafflesController < ApplicationController
   def new
     @raffle = Raffle.new 
     
-    if Parking.where(assigned: nil, parking_type: 'DISCA').count > 0
+    if Parking.where(assigned: nil, parking_type: 'DISCA').count.positive?
       @parking_raffle = Parking.where(assigned: nil, parking_type: 'DISCA').sample
       @applicant_raffle = Applicant.where(assigned: nil, vehicle_type: 'DISCA').sample
-    elsif Parking.where(assigned: nil, parking_type: 'MOTO').count > 0
+    elsif Parking.where(assigned: nil, parking_type: 'MOTO').count.positive?
       @parking_raffle = Parking.where(assigned: nil, parking_type: 'MOTO').sample
       @applicant_raffle = Applicant.where(assigned: nil, vehicle_type: 'MOTO').sample
-    elsif Parking.where(assigned: nil, parking_type: 'AUTO').count > 0
+    elsif Parking.where(assigned: nil, parking_type: 'AUTO').count.positive?
       @parking_raffle = Parking.where(assigned: nil, parking_type: 'AUTO').sample
       @applicant_raffle = Applicant.where(assigned: nil, vehicle_type: 'AUTO').sample
     end
@@ -48,13 +48,13 @@ class RafflesController < ApplicationController
 
       applicant_raffle = Applicant.find_by(id: raffle_params['applicant_id'])
       applicant_raffle.assigned = true 
-      applicant_raffle.save 
+      applicant_raffle.save
     
     else
       
       applicant_raffle = Applicant.find_by(id: raffle_params['applicant_id'])
       applicant_raffle.assigned = false 
-      applicant_raffle.save 
+      applicant_raffle.save
 
     end
 

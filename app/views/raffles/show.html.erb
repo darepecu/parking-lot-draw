@@ -1,31 +1,33 @@
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Sorteo</h1>
+    <h2 class="subtitle">Resultado del Sorteo</h1>
+  </div>
+</section>
+
 <p id="notice"><%= notice %></p>
 
 <div class="columns">
 
-  <div class="column">
-  </div>
-
-  <div class="column">
+  <div class="column is-one-quarter">
 
     <div class="field">
-      <label class="label">Assigned:</label>
-      <input class="input is-static" type="text" value="<%= @raffle.assigned %>" readonly>
+    <label class="label">Parqueadero:</label>
+    <input class="input is-static" type="text" value="<%= @raffle.parking.name %>" readonly>
     </div>
 
     <div class="field">
-      <label class="label">Applicant:</label>
+      <label class="label">Placa:</label>
       <input class="input is-static" type="text" value="<%= @raffle.applicant.plate %>" readonly>
     </div>
 
-    <div class="field">
-    <label class="label">Parking:</label>
-    <input class="input is-static" type="text" value="<%= @raffle.parking.name %>" readonly>
+     <div class="field">
+      <label class="label">Asignado:</label>
+      <input class="input is-static" type="text" value="<%= @raffle.assigned %>" readonly>
     </div>
 
     <%= link_to 'Edit', edit_raffle_path(@raffle), class: 'button is-rounded is-outlined' %>
     <%= link_to 'Continue', home_index_path, class: 'button is-primary is-rounded is-outlined' %>
   </div>
 
-  <div class="column">
-  </div>
  </div>

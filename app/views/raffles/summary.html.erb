@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<section class='hero is-Light welcome is-small'>
+  <div class='hero-body'>
+    <h1 class="title">Sorteos Realizados</h1>
+    <h2 class="subtitle">Resumen de asignación</h1>
+  </div>
+</section>
+
+<table class = 'table is-hoverable'>
+  <thead>
+    <tr>
+      <th>Usuario - Placa</th>
+      <th>Parqueadero</th>
+      <th>Tipo Parqueadero</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Raffle.all.each do |raffle| %>
+      <% if raffle.assigned.eql? true%>
+        <tr>
+          <td><%= raffle.applicant.plate %></td>
+          <td><%= raffle.parking.name %></td>
+          <td><%= raffle.parking.parking_type %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

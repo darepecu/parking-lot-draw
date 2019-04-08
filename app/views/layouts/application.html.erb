@@ -11,7 +11,7 @@
 
   <body>
     <!-- START NAV -->
-    <nav class="navbar is-white">
+    <nav class="navbar-brand is-white" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item brand-text" href="../">
@@ -63,6 +63,14 @@
               </li>
               <li>
                 <%= link_to 'Sorteos', raffles_path %>
+              </li>
+            </ul>
+            <p class="menu-label">
+              Sorteo
+            </p>
+            <ul class="menu-list">
+              <li>
+                <%= link_to 'Resumen Sorteo', summary_raffles_path %>
               </li>
             </ul>
             <p class="menu-label">
