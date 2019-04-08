@@ -18,12 +18,7 @@
 
   <div class="field">
     <%= form.label :vehicle_type, class: 'label'%>
-    <%= form.text_field :vehicle_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :assigned, class: 'label'%>
-    <%= form.check_box :assigned %>
+    <%= form.select :vehicle_type, ['AUTO', 'MOTO', 'DISCA'], class: 'select is-rounded' %>
   </div>
 
   <div class="actions">

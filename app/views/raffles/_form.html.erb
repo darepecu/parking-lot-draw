@@ -20,6 +20,7 @@
       <%= form.hidden_field :parking_id, value: @parking_raffle.id, :readonly => true %>
       <h4 class='label'>Parqueadero:</h4>
       <div class='input is-primary is-rounded'><%= @parking_raffle.name %></div>
+      <div class='input is-info is-rounded'><%= @parking_raffle.parking_type %></div>
     <% end %>
   </div>
 
@@ -32,6 +33,7 @@
       <%= form.hidden_field :applicant_id, value: @applicant_raffle.id, :readonly => true  %>
       <h4 class='label'>Vehículo: </h4>
       <div class='input is-primary is-rounded'> <%= @applicant_raffle.plate %></div>
+      <div class='input is-info is-rounded'> <%= @applicant_raffle.vehicle_type %></div>
     <% end %>
     
   </div>

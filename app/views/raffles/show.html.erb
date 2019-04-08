@@ -11,12 +11,14 @@
 
     <div class="field">
     <label class="label">Parqueadero:</label>
-    <input class="input is-static" type="text" value="<%= @raffle.parking.name %>" readonly>
+      <input class="input is-static" type="text" value="<%= @raffle.parking.name %>" readonly>
+      <input class="input is-static" type="text" value="<%= @raffle.parking.parking_type %>" readonly>
     </div>
 
     <div class="field">
       <label class="label">Placa:</label>
       <input class="input is-static" type="text" value="<%= @raffle.applicant.plate %>" readonly>
+      <input class="input is-static" type="text" value="<%= @raffle.applicant.vehicle_type %>" readonly>
     </div>
 
      <div class="field">

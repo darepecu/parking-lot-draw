@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :parking_type, class: 'label' %>
-    <%= form.text_field :parking_type %>
+    <%= form.select :parking_type, ['AUTO', 'MOTO', 'DISCA'], class: 'select is-rounded'%>
   </div>
 
   <div class="actions">
