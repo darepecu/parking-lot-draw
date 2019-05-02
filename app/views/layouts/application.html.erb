@@ -75,6 +75,18 @@
                 <%= link_to 'Pendientes por asignar', pending_assigned_applicants_path %>
               </li>
             </ul>
+            <p class="menu-label">
+              <i class="fa fa-cogs"></i>
+              Admin
+            </p>
+            <ul class="menu-list">
+              <li>
+                <%= link_to 'Subir info', home_index_path %>
+              </li>
+              <li>
+                <%= link_to 'Reiniciar Sorteo', home_index_path %>
+              </li>
+            </ul>
           </aside>
       </div>
 
@@ -90,7 +102,7 @@
         </section>
       </div>
 
-      <div class="dashboard-panel is-medium has-background-light is-scrollable">
+      <div class="dashboard-panel is-medium has-background-light">
         
         <h2 class="subtitle">
           Estado del sorteo:
